@@ -17,16 +17,16 @@ with open("examples/ref2.txt") as f:
 print(ref2)
 
 def bleu():
-    bleu_scorer = BleuScorer(n=4)
-    bleu_scorer += (hypo[0], ref1)   # hypo[0] = 'word1 word2 word3 ...'
+    scorer = BleuScorer(n=4)
+    scorer += (hypo[0], ref1)   # hypo[0] = 'word1 word2 word3 ...'
                                     # ref = ['word1 word2 word3 ...', 'word1 word2 word3 ...']
-    score, _ = bleu_scorer.compute_score()
+    score, _ = scorer.compute_score()
     print(score)
 
 def cider():
-    cider_scorer = CiderScorer()
-    cider_scorer += (hypo[0], ref1)
-    (score, scores) = cider_scorer.compute_score()
+    scorer = CiderScorer()
+    scorer += (hypo[0], ref1)
+    (score, scores) = scorer.compute_score()
     print(score)
 
 def meteor():
