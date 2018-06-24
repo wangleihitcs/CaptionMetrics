@@ -115,6 +115,7 @@ class CiderScorer(object):
             vec = [defaultdict(float) for _ in range(self.n)]
             length = 0
             norm = [0.0 for _ in range(self.n)]
+            # print(len(self.crefs))
 
             for (ngram,term_freq) in cnts.items():
                 # give word count 1 if it doesn't appear in reference corpus

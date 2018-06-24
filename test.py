@@ -16,6 +16,9 @@ with open("examples/ref2.txt") as f:
     ref2 = [x.strip() for x in ref]
 print(ref2)
 
+hypo = ['this is the model generated sentence1 which seems good enough']
+ref1 = ['this is the model generated sentence1 which seems good enough']
+
 def bleu():
     scorer = BleuScorer(n=4)
     scorer += (hypo[0], ref1)   # hypo[0] = 'word1 word2 word3 ...'
@@ -40,9 +43,9 @@ def rouge():
     print(score)
 
 def main():
-    bleu()
+    # bleu()
     cider()
     # meteor()
-    rouge()
+    # rouge()
 main()
 

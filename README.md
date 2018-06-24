@@ -8,4 +8,5 @@ Image Caption Metrics: Bleu、Cider、Meteor、Rouge
 * [https://github.com/tylin/coco-caption](https://github.com/tylin/coco-caption)
 
 ## e.g
-there is some trouble on meteor on python3
+There is some trouble on meteor on python3, on python2 is right.
+There are some wrong in cider, I will adjust one day!
