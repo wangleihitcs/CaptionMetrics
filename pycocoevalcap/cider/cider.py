@@ -12,7 +12,7 @@ import pdb
 
 class Cider:
     """
-    Main Class to compute the CIDEr metric 
+    Main Class to compute the CIDEr metric
 
     """
     def __init__(self, test=None, refs=None, n=4, sigma=6.0):
@@ -26,7 +26,7 @@ class Cider:
         Main function to compute CIDEr score
         :param  hypo_for_image (dict) : dictionary with key <image> and value <tokenized hypothesis / candidate sentence>
                 ref_for_image (dict)  : dictionary with key <image> and value <tokenized reference sentence>
-        :return: cider (float) : computed CIDEr score for the corpus 
+        :return: cider (float) : computed CIDEr score for the corpus
         """
 
         assert(gts.keys() == res.keys())

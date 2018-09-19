@@ -115,15 +115,13 @@ class CiderScorer(object):
             vec = [defaultdict(float) for _ in range(self.n)]
             length = 0
             norm = [0.0 for _ in range(self.n)]
-            # print(len(self.crefs))
-
-            for (ngram,term_freq) in cnts.items():
+            for (ngram, term_freq) in cnts.items():
                 # give word count 1 if it doesn't appear in reference corpus
                 df = np.log(max(1.0, self.document_frequency[ngram]))
                 # ngram index
                 n = len(ngram)-1
                 # tf (term_freq) * idf (precomputed idf) for n-grams
-                vec[n][ngram] = float(term_freq)*(len(self.crefs) - df)
+                vec[n][ngram] = float(term_freq)*(self.ref_len - df)
                 # compute norm for the vector.  the norm will be used for computing similarity
                 norm[n] += pow(vec[n][ngram], 2)
 
@@ -162,14 +160,12 @@ class CiderScorer(object):
 
         # compute log reference length
         self.ref_len = np.log(float(len(self.crefs)))
-
         scores = []
         for test, refs in zip(self.ctest, self.crefs):
             # compute vector for test captions
             vec, norm, length = counts2vec(test)
             # compute vector for ref captions
             score = np.array([0.0 for _ in range(self.n)])
-            # print(refs)
             for ref in refs:
                 vec_ref, norm_ref, length_ref = counts2vec(ref)
                 score += sim(vec, vec_ref, norm, norm_ref, length, length_ref)
@@ -186,13 +182,10 @@ class CiderScorer(object):
     def compute_score(self, option=None, verbose=0):
         # compute idf
         self.compute_doc_freq()
-        # print(self.document_frequency)
-
         # assert to check document frequency
         assert(len(self.ctest) >= max(self.document_frequency.values()))
         # compute cider score
         score = self.compute_cider()
-
         # debug
         # print score
         return np.mean(np.array(score)), np.array(score)
