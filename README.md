@@ -3,6 +3,7 @@ Image Caption Metrics: Bleu、Cider、Meteor、Rouge
 
 ## library
 * python3.5 or python2.7
+* jdk-1.8
 
 ## command
 * $ python main.py
