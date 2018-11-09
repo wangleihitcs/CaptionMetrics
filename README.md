@@ -1,9 +1,12 @@
 ## introduce
-Image Caption Metrics: Bleu、Cider、Meteor、Rouge
+Image Caption Metrics: Bleu、Cider、Meteor、Rouge、Spice
 
 ## library
 * python3.5 or python2.7
 * jdk-1.8
+* Stanford CoreNLP 3.6.0[(download)](http://nlp.stanford.edu/software/stanford-corenlp-full-2015-12-09.zip)
+	* add stanford-corenlp-3.6.0.jar to pycocoevalcap/spice/lib/
+	* add stanford-corenlp-3.6.0-models.jar to pycocoevalcap/spice/lib/
 
 ## command
 * $ python main.py

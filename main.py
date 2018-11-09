@@ -2,15 +2,13 @@ from pycocoevalcap.bleu.bleu import Bleu
 from pycocoevalcap.cider.cider import Cider
 from pycocoevalcap.meteor.meteor import Meteor
 from pycocoevalcap.rouge.rouge import Rouge
+from pycocoevalcap.spice.spice import Spice
+import json
 
-gts = {
-    184321: [' This is an image of a beach on a cloudy day'],
-    # 81922: ['a large jetliner flying over a traffic filled street']
-}
-res = {
-    184321: [' There are  kits flying in the air at the beach'],
-    # 81922: ['plane is flying through the sky']
-}
+with open('examples/gts.json', 'r') as file:
+    gts = json.load(file)
+with open('examples/res.json', 'r') as file:
+    res = json.load(file)
 
 def bleu():
     scorer = Bleu(n=4)
@@ -18,7 +16,7 @@ def bleu():
     #                                 # ref = ['word1 word2 word3 ...', 'word1 word2 word3 ...']
     score, scores = scorer.compute_score(gts, res)
 
-    print('belu = %s' % scores)
+    print('belu = %s' % score)
 
 def cider():
     scorer = Cider()
@@ -36,9 +34,15 @@ def rouge():
     score, scores = scorer.compute_score(gts, res)
     print('rouge = %s' % score)
 
+def spice():
+    scorer = Spice()
+    score, scores = scorer.compute_score(gts, res)
+    print('spice = %s' % score)
+
 def main():
-    # bleu()
-    # cider()
+    bleu()
+    cider()
     meteor()
-    # rouge()
+    rouge()
+    spice()
 main()
