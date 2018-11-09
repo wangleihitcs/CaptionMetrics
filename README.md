@@ -10,7 +10,7 @@ Image Caption Metrics: Bleu、Cider、Meteor、Rouge、Spice
 
 ## examples
 * $ python main.py
-* ![](https://github.com/wangleihitcs/CaptionMetrics/tree/master/examples/img.png)
+* ![](https://github.com/wangleihitcs/CaptionMetrics/blob/master/examples/img.png)
 
 ## reference
 * [https://github.com/tylin/coco-caption](https://github.com/tylin/coco-caption)
