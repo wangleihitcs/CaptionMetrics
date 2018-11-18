@@ -160,6 +160,8 @@ class CiderScorer(object):
 
         # compute log reference length
         self.ref_len = np.log(float(len(self.crefs)))
+        if len(self.crefs) == 1:
+            self.ref_len = 1
         scores = []
         for test, refs in zip(self.ctest, self.crefs):
             # compute vector for test captions

@@ -17,4 +17,5 @@ Image Caption Metrics: Bleu、Cider、Meteor、Rouge、Spice
 
 ## e.g
 There is some thing wrong in python3, but python2 is right.
+Fix the problem 'cider = 0 when only one image caption'. 
 
