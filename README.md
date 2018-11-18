@@ -16,6 +16,6 @@ Image Caption Metrics: Bleu、Cider、Meteor、Rouge、Spice
 * [https://github.com/tylin/coco-caption](https://github.com/tylin/coco-caption)
 
 ## e.g
-There is some thing wrong in python3, but python2 is right.
+There is some thing wrong in python3, but python2 is right.</br>
 Fix the problem 'cider = 0 when only one image caption'. 
 
