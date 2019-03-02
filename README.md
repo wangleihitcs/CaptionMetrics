@@ -9,9 +9,8 @@ Image Caption Metrics: Bleu、Cider、Meteor、Rouge、Spice
 	* add stanford-corenlp-3.6.0-models.jar to pycocoevalcap/spice/lib/
 
 ## examples
-![class-activation-mapping](./examples/example.png)
 - $ python main.py
-
+![class-activation-mapping](https://github.com/wangleihitcs/CaptionMetrics/blob/master/examples/example.png)
 
 ## reference
 * [https://github.com/tylin/coco-caption](https://github.com/tylin/coco-caption)
