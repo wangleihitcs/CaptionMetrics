@@ -10,8 +10,7 @@ Image Caption Metrics: Bleu、Cider、Meteor、Rouge、Spice
 
 ## examples
 * $ python main.py
-</br>
-![example](./examples/img.png)
+![class-activation-mapping](./examples/img.png)
 
 ## reference
 * [https://github.com/tylin/coco-caption](https://github.com/tylin/coco-caption)
